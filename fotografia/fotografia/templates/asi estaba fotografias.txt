@@ -1,0 +1,25 @@
+<div id="galeriaFoto">
+	</div>
+<div id="galeriaFotin">
+		<div id="back_n">  
+      <img id="fotin" src="" />
+      <div id="flec">
+        <div id="bot_izq">
+          <img src="/static/imagenes/boton izquierdo.jpg">
+        </div>
+        <div id="bot_der">
+          <img src="/static/imagenes/boton derecho.jpg">
+        </div>
+      </div>
+      <div id="bot_g">
+          
+		    <span id="siguiente" >siguiente</span>
+		    <span id="anterior" >anterior</span>
+      </div>
+    </div>  
+	</div>
+	
+	aviso ...yo borre ambos span, en pleno uso de mis facultades 
+y mi mente he decidido guardar aquellos viejos cambios..
+...
+aqui...

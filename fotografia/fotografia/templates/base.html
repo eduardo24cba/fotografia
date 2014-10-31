@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/static/css/minimalista.css">
+		<script type=text/javascript src="/static/js/jquery.js"></script>
+	{% block head %} {% endblock %}
+	</head>
+	<body style="position:static;background-color:rgba(0,0,0,1)">
+	<div id="barra_de_titulo_sup">
+		<a href="/index" id="titulo_portada"> www.hugosuarezfotografia.com</a>
+			<div class="menub_sup">
+
+				<div class="caj_m2">
+					<a href="/index/galerias/artistica">artistica</a>
+					<div class="marca_h"></div>
+				</div>
+
+				<div class="caj_m2">
+					<a href="/index/galerias/retratos">retratos</a>
+					<div class="marca_h"></div>
+				</div>
+
+				<div class="caj_m2">
+					<a href="/index/galerias/books">books</a>
+					<div class="marca_h"></div>
+				</div>
+
+				<div class="caj_m2">
+					<a href="/index/galerias/sociales">sociales</a>
+					<div class="marca_h"></div>
+				</div>
+
+				<div class="caj_m2">
+					<a href="/index/galerias/otros">otros</a>
+					<div class="marca_h"></div>
+				</div>
+
+				<div class="caj_m2">
+					<a href="/index/galerias/videos">videos</a>
+					<div class="marca_h"></div>
+				</div>			
+			</div>		
+	</div>
+	<div id="barra_sep_1">
+	</div>
+
+	{%block contenido%}
+
+	{%endblock%}
+
+        
+	</body>
+</html>

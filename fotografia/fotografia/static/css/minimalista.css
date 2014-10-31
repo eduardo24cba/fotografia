@@ -1,0 +1,482 @@
+html>body #box_trans {
+  position:fixed;
+}
+
+html{width:100%;
+height:100%;
+overflow:auto;
+}
+
+body{
+background-color:rgba(56,71,107,1);
+position:fixed;
+width:100%;
+height:100%;
+margin:0px;
+overflow:auto;
+
+}
+
+#barra_de_titulo_sup{
+width:100%;
+top:30px;
+left:0;
+background-color:rgba(83,83,83,0.7);	
+position:relative;
+padding:10px;
+opacity: 0.70;
+font-size:22;
+/*height: 50px;*/
+overflow:auto;
+box-sizing:border-box;
+margin-bottom:30px;
+}
+
+div#marg_der{
+	float:right;
+	display:inline-block;
+	font-family:'Allerta Stancil',sans-serif;
+	padding:10px;
+
+}
+
+#barra_de_titulo_inf{
+width:100%;
+top:75%;
+left:0;
+background-color:rgba(30,30,30,0.7);	
+position:absolute;
+padding:10px;
+opacity: 0.70;
+
+}
+h2{
+	margin:0px;
+	position:relative;
+	color:#b8b8b8;
+	font-family:'Allerta Stancil',Sans-serif;
+	text-decoration:underline; 
+}
+
+
+
+
+.menub{
+	position:relative;
+	
+	width:60%;
+	max-width:400px;
+	/*margin:10px 20px 0px 10px;*/
+	/*background:#025BA3;*/
+	text-align:center;
+	float:right;
+	transition:all 0.9s ease;
+}
+
+
+.menub_sup{
+	position:relative;
+	/*overflow:hidden;*/
+	width:71%;
+	/*margin:10px 20px 0px 10px;*/
+	/*background:#025BA3;*/
+	text-align:center;
+	float:right;
+	transition:all 0.9s ease;
+	}
+
+.caj_m{
+	display:inline-block;
+	width:26%;
+	min-width:72px;
+	box-sizing:contet-box;
+	/*padding:10px 5px;*/
+	
+	text-decoration:none;
+	margin:auto 30px;
+	}
+
+div#barra_sep_1{
+	height:4px;
+	position:relative;
+	background-color:#969696;
+}	
+
+.caj_m2{
+	display:inline-block;
+	/*width:10%;*/
+	min-width:72px;
+	box-sizing:contet-box;
+	/*padding:10px 5px;*/	
+	text-decoration:none;
+	margin:auto 5px;
+	}
+
+
+
+.menub a{
+	display:block;
+	/*width:49%;  oseeaa 100% dividido por el numero de elementos del menu*/
+	/*box-sizing:border-box;*/
+	/*padding:10px 5px;*/
+	color:#7ab4ca;
+	text-decoration:none;
+	text-align:center;
+	transition:all 0.5s ease;
+	padding:6px 12px;
+}
+
+.menub a:hover{
+	padding-left:15px;
+	color:#fff;
+	/*color:;*/
+}
+
+.menub_sup a:hover{
+	padding-left:15px;
+	color:#fff;
+	/*color:;*/
+}
+.marca{
+	position:absolute;
+	bottom:4px;
+	right:-52px;/* al menos 1/2 del ancho de cada enlace*/
+	width:51.5px;/* 1/2 del ancho de cada enlace*/
+	height:5px;
+	background:#fff;
+	transition:0.5s ease-in-out;
+}
+
+div.marca_h{
+	position:relative;
+	bottom:8px;
+	/*right:90px; al final lo mejor me parecio que deberia ser..*/
+	width: 0px;/* un objeto sin posicion ni tamaño...*/
+	height:5px;
+	background:#fff;
+	transition:0.3s ease-in-out;
+}
+
+
+.menub a:nth-child(1):hover~.marca_h{
+	width:100%;/*para finalmente darselo en el hover...*/
+	/*demasiado simple en verdad...*/
+	/*poniendo en duda mi paciencia y mi sentido comun,*/
+	/*para ser sinceros. */
+}
+
+.menub_sup a:nth-child(1):hover~.marca_h{
+	width:100%;/*para finalmente darselo en el hover...*/
+	/*demasiado simple en verdad...*/
+	/*poniendo en duda mi paciencia y mi sentido comun,*/
+	/*para ser sinceros. */
+}
+
+
+
+
+div.marca_h:hover{
+	right:none;
+	}
+
+
+.menub a:nth-child(1):hover~.marca{
+	right:70.25% ;
+	}
+
+.menub a:nth-child(2):hover~.marca{
+	right:20%;
+	width: 58.5px;
+}
+
+
+	
+@media all and (max-width:740px){
+	.menub{width:43%;}
+	}
+@media all and (max-width:600px){
+	.menub{width:35%;}
+	.caj_m{width:60%;}
+	}
+@media all and (max-width:510px){
+	.menub{	float:left;padding-left:10%;width: 61%; }
+	.caj_m{width:67%;}
+	}
+
+
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+@media all and (max-width:995px){
+	.menub_sup{width:60%;}
+	}
+@media all and (max-width:740px){
+	.menub_sup{width:43%;}
+	}
+@media all and (max-width:520px){
+	.menub_sup{float:left;padding-left:10%;width:35%;}
+	}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.menub_sup a{
+	display:block;
+	/*width:49%;  oseeaa 100% dividido por el numero de elementos del menu*/
+	/*box-sizing:border-box;*/
+	/*padding:10px 5px;*/
+	color:#fff;
+	text-decoration:none;
+	text-align:center;
+	transition:all 0.5s ease;
+	padding:5px 8px;
+	/*margin:2px 2px;*/
+}
+.marca_sup{
+	position:absolute;
+	bottom:0px;
+	right: -67.5px;
+	/*right:-7.5%; al menos 1/2 del ancho de cada enlace*/
+	width:75px;/* 1/2 del ancho de cada enlace*/
+	height:5px;
+	background:#fff;
+	transition:0.5s ease-in-out;
+}
+
+/*  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;  */
+/*  SOBRE MI  */
+
+div#cont_mi{
+	background-color:#242424;
+	margin:20px;
+	margin-right:30px;
+	padding: 10px;
+	box-sizing:content-box;
+}
+div#foto_mi{background:#3b3b3b;padding:5px;display:inline-block;margin-left:10px;margin-top:10px;}
+img.perfil{max-height:260px;}
+div#bio{padding:5px;}
+p{ padding-left:12px;margin:0px;color:#ffffff;}
+
+
+/*  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  */
+
+#titulo_portada{
+display:inline;
+color:#ffffff;
+font-family:'Allerta Stencil', sans-serif;
+font-size:23px;
+}
+
+#ulPortada{float:right; margin-right:30px;margin-top:0px;margin-bottom:0px;position:relative;top:5px;}
+
+#ulPortada li a{margin-right:50px;}
+
+#ulPortada li{display:inline;margin-right:50px;}
+
+	#ulPortada li .opciones a{
+float:right;
+display:inline;
+position:relative;
+margin-right:60px;
+
+color:#ffffff;
+font-family:'Allerta Stencil', sans-serif;
+
+cursor:pointer;
+}
+#galerias{
+top:40px;
+height: 100%;
+width:100%;
+position:relative;
+float:none;
+}
+
+.cuadrito{
+position:absolute;
+top:0px;
+padding:0px;
+margin: 10px 20px 50px 20px;
+
+}
+
+.rotulo{
+position: relative;
+color:#dedede;
+}
+
+.img_full{
+/*modelo 1*/	
+	width:100%;
+	cursor:pointer;
+	width: 150px;
+	max-height:200px;
+}
+
+.img_full2{
+/*modelo 2*/
+/*8 fotos por fila:gracias al max-width y al max-height se pudo hacer que las
+imagenes fueran mas chicas sin que pierdan su proporcion
+....
+aunque la verdad no me explico porque....fue a puro
+"ensayo y error...ensayo y error :P"   */	
+	width:100%;
+	cursor:pointer;
+	max-width: 135px;
+	max-height:184px;
+}
+
+#mis_notas{
+	float:bottom; 
+	bottom:0;
+	position:fixed;
+	padding:10px;
+    color:white;
+    /*display:none;*/
+
+}
+
+#titulo_portada #opciones{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+
+.fotos{display:inline-block;list-style-type:none;margin:0px;padding:0px;}
+li.fotos{margin:15px 50px;text-align:center;}
+li{display:inline-block;background-color:rgba(39,39,39);margin:10px;}
+
+#imagenesAlbum{display:inline-block;list-style-type:none;margin:15px;padding:0px;background-color: rgba(60,60,60,0.3);}
+#imagenesAlbum li a{text-decoration:none;color:#fff;text-align:bottom;margin-top:0px;top:0px;}
+
+#imagenesAlbum li{margin:15px 50px;text-align:center;display: block;}
+#anterior{
+	display:none;
+	left:0;
+	color:white;
+}
+
+#siguiente{display:none;right:0;color:white;margin-right:0;}/*nose porque...*/
+#siguiente:hover{margin-right:0;}/*pero te falta un pequeño espacio...*/
+/*...pero con esto ya no se nota */
+
+#siguiente,#anterior{
+	background-color:rgb(255,255,255);
+	color:black;
+	position: absolute;
+	top: 50%;
+	width: 60px;
+	height: 25px;
+	margin-top: -15px;
+	padding:5px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+	opacity:0.0;
+	transition:all 0.4s ease;
+}
+#siguiente:hover,#anterior:hover{
+	text-decoration: underline;
+	padding:15px;
+	background-color:rgb(56,56,56);
+	color:white;
+	opacity:1.0;
+}
+/*ponemos color negro al div que aparece de fondo, puse display none para que no aparezca el div al entrar a la pagina*/
+#galeriaFoto{
+width:100%;
+height:100%;
+position:fixed;
+background-color:black;
+z-index:2;
+top:0;
+left:0;
+display: none;
+}
+
+#box_trans{
+/*bueh...ahora se lo aplico a este porque al cambiar el estilo ahora este debe tener. display:none*/
+	width:100%;
+	height:100%;
+	background-color:black;
+	z-index:2;
+	top:0;
+	left:0;
+	display:none;
+}
+
+#galeriaFotin{
+z-index:6;
+background-color:(0,0,0,0.4);
+text-align:center;
+position:fixed;
+right:0;
+left:0;
+top:20px;
+cursor: pointer;
+}
+
+div#back_n{
+	background:black;
+	display:inline-block; /*milagro....ES UN MILAGROOOOO*/
+	padding:5px;
+	padding:right:40px;
+	overflow:hidden;
+
+
+}
+/*ponemos cursor por defecto del navegador a la foto*/
+#galeriaFotin img{
+	cursor:default;
+	max-height:490px;
+}
+div#flec{
+	position:absolute;
+	top:0;
+	height:100%;
+	bottom:0;
+}
+
+#bot_b{
+	bottom:0;
+	height:100%;
+	width:20%;
+	cursor:pointer;
+	z-index:1000;
+
+}
+#bot_b-izq{left:0;}
+#bot_b-der{right:0;}
+#bot_b-izq, #bot_b-der{
+	position:absolute;
+	top:50%;
+	height:100%;
+	width:57%;/*esto es lo ultimo que toque para posicionar las flechas...
+	pero no es exacto ...osea ...no es flexibleee*/
+}
+
+
+div#bot_izq{
+	display:inline;
+	float:left;
+	top:0;
+	bottom:0;
+	left:-70px;
+	position:relative;
+	transition:all 0.5s ease;
+	padding-right: 15px;
+}
+div#bot_izq:hover{left:0px;}
+div#bot_der{
+	display:inline;
+	float:right;
+	top:0;
+	bottom:0;
+	right:-70px;
+	position:relative;
+	transition:all 0.5s ease;
+	padding-left:15px;
+}
+div#bot_der:hover{right:0px;}
+
+
+#background{position:absolute; width:100%; height:100%;}

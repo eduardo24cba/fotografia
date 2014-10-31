@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+{%block contenido%}
+<div id="galerias">
+    <div class="cuadrito">
+  
+      {%for album in albumes%}
+        {%with contador=album%}
+      <ul id="imagenesAlbum">
+       {%for foto in fotografias%}
+          {%ifequal contador|stringformat:"s" foto.relacion|stringformat:"s" %}
+            <li><a href="{{contador.get_absolute_url}}"><img src="{{foto.fotos.url}}" class="img_full"/></a></li>
+            <li><a href="{{contador.get_absolute_url}}">{{contador.get_galerias_display }}</a></li>
+          {%endifequal%}>
+        {%endfor%}
+      </ul>
+      {%endwith%}
+    {%endfor%}
+   </div>
+</div>
+{%endblock%}

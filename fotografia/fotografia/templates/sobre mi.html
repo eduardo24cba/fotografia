@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+<!--{%block contenido%}-->
+
+	<div id="marg_der">
+		<h2 >Sobre mi</h2>
+	</div>	
+
+	
+
+
+	{%for mi in sobremi %}
+		
+		<div id="foto_mi"><img class="perfil" src="{{mi.fotoPerfil.url}}" name="HugoSuarez"/>	</div>
+		<div id="cont_mi"><p>{{mi.sobreMi|linebreaks}}</p></div>
+		<div id="barra_sep_1"></div>
+		<p>{{mi.telefono}}</p>
+		<p>{{mi.email}}</p>
+
+	{%endfor%}
+
+{%endblock%}

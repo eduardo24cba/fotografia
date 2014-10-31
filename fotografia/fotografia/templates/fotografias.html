@@ -1,0 +1,123 @@
+{%extends "base.html"%}
+{% block head %}
+<script type="text/javascript">
+//cortesia stackoverflow
+function isMobile(x) {
+    ///<summary>Detecting whether the browser is a mobile browser or desktop browser</summary>
+    ///<returns>A boolean value indicating whether the browser is a mobile browser or not</returns>
+
+    if (sessionStorage.desktop) // desktop storage
+        return false;
+    else if (localStorage.mobile) // mobile storage
+        return true;
+
+    // alternative
+    var mobiles = ['iphone','ipad','android','blackberry','nokia','opera mini','windows mobile','windows phone','iemobile'];
+    for (var i in mobiles) if (navigator.userAgent.toLowerCase().indexOf(mobiles[i]) > 0) return false;
+
+    // nothing found.. assume desktop
+    return galeria(x);
+}
+$(document).ready(function(){
+//globales
+function EventHandler(e) {
+  e = e || window.event;
+  console.log(e.target);
+}
+contador=0;
+foto="{{datos}}";
+fotin=document.getElementById("fotin");
+div=document.getElementById("galeriaFoto");
+divFotin=document.getElementById("galeriaFotin");
+array= new Array()
+array=foto.split(",");
+botonSiguiente=document.getElementById("siguiente");
+botonAnterior=document.getElementById("anterior");
+//detectamos eventos 
+divFotin.onclick = function (e) {
+e = e || window.event; 
+if (e.target.id == divFotin.id ){
+  $(div).fadeOut(1000,function(){div.style.display="None";});
+  $(divFotin).fadeOut(1000,function(){divFotin.style.display="None";});}
+  };
+botonSiguiente.onclick = function (e){
+if (e.target.id == botonSiguiente.id){siguiente();}};
+botonAnterior.onclick = function (e){
+if (e.target.id == botonAnterior.id){anterior();}};
+
+galeria=function(x){
+contador=parseInt(x);
+div.style.display="block";
+divFotin.style.display="block";
+fotin.src='/media/'+array[contador];
+document.getElementById("bot_g").style.left=fotin.offsetLeft;
+botonAnterior.style.left=fotin.offsetLeft;
+botonSiguiente.style.right=fotin.offsetLeft;
+if ( contador != 0){botonAnterior.style.display="inline";}
+else{botonAnterior.style.display="none";}
+if ( contador >= array.length-1){botonSiguiente.style.display="none";}
+else{botonSiguiente.style.display="inline";}
+}
+function cargarImagen(){
+$(fotin).fadeOut(1000,function(){
+fotin.src='/media/'+array[contador];
+fotin.onload=function(){
+botonAnterior.style.left=fotin.offsetLeft;
+botonSiguiente.style.right=fotin.offsetLeft;}
+$(fotin).fadeIn(1000);})
+
+}
+siguiente=function(){
+	 
+     if ( contador < array.length-1){contador+=1;cargarImagen()
+     botonAnterior.style.display="inline";
+      }
+     if( contador == array.length-1){  botonSiguiente.style.display="none";}
+	 }
+anterior=function(){
+	 if ( contador >= 1 ){contador-=1;
+	 cargarImagen()
+     if ( contador == 0 ){botonAnterior.style.display="none";}}
+     if( contador < array.length-1){  botonSiguiente.style.display="inline";}
+	 }
+
+});  
+</script>
+
+{% endblock %}
+{%block contenido%}
+<div id="galeriaFoto">
+	</div>
+<div id="galeriaFotin">
+		<div id="back_n">  
+      <img id="fotin" />      
+    </div>
+    <div id="bot_g">          
+        <span id="siguiente" >siguiente</span>
+        <span id="anterior" >anterior</span>
+      </div>  
+	</div> 
+	<div id="galerias" >
+		<div class="cuadrito">
+			<ul style="list-style-type:none;padding:0px 40px">
+			{%for foto in fotografias%}
+	  			<li><img name="fotos" class="img_full" src="{{foto.fotos.url}}" alt="{{foto.relacion}}" onclick="isMobile('{{ forloop.counter0 }}')"/></li>
+			
+			{%endfor%}
+			</ul>
+			<div class="rotulo">
+				<div class="pagination">
+   		 		  <span class="step-links">
+     		   		    {% if fotografias.has_previous %}
+         	      		    <a href="?page={{ fotografias.previous_page_number }}">anterior</a>
+      		   		    {% endif %}
+    	                           {% if fotografias.has_next %}
+    		                   <a href="?page={{ fotografias.next_page_number }}">siguiente</a>
+    	                           {% endif %}
+                                 </span>
+                                </div>			</div>
+		</div>
+    </div>
+
+
+{%endblock%}

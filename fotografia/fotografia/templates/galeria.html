@@ -1,0 +1,34 @@
+{%extends "base.html"%}
+{%block contenido%}
+	<div id="galerias">
+		<div class="cuadrito">
+	
+          {%for album in albumes%}
+		{%with contador=album%}
+		<ul id="imagenesAlbum">
+		{%for foto in fotografias%}
+			{%ifequal contador|stringformat:"s" foto.relacion|stringformat:"s" %}
+			<li><a href="{{contador.get_absolute_url}}"><img src="{{foto.fotos.url}}" class="img_full"/></a></li>
+			<li><a href="{{contador.get_absolute_url}}">{{contador.album }}</a></li>
+			{%endifequal%}>
+		{%endfor%}
+		</ul>
+		{%endwith%}
+	 {%endfor%}
+	
+			<div class="rotulo">
+				<div class="pagination">
+   		 			<span class="step-links">
+     		   		    {% if albumes.has_previous %}
+         	      		    <a href="?page={{ albumes.previous_page_number }}">anterior</a>
+      		   		    {% endif %}
+    		      		   {% if albumes.has_next %}
+    		                   <a href="?page={{ albumes.next_page_number }}">siguiente</a>
+    	                           {% endif %}
+    	        	</span>
+            	</div>			
+            </div>
+		</div>
+	
+        </div>
+{%endblock%}
